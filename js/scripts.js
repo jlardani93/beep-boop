@@ -45,6 +45,8 @@ $(document).ready(function() {
   var setDivisibleByThree = function(num) {
     if (num % 3 === 0) {
       return true;
+    } else {
+      return false;
     };
   };
   // runs through beepBoopArray and shows user a modified list of numbers, beeps, and boops.
@@ -85,11 +87,64 @@ $(document).ready(function() {
       };
     };
   };
+  //animates robot image
+  var changeRobot = function(robotCount) {
+    var showRobot1 = function() {
+      $("#robot1").show();
+      $("#robot2").hide();
+      $("#robot3").hide();
+    };
+    var showRobot2 = function() {
+      $("#robot1").hide();
+      $("#robot2").show();
+      $("#robot3").hide();
+    };
+    var showRobot3 = function() {
+      $("#robot1").hide();
+      $("#robot2").hide();
+      $("#robot3").show();
+    };
+
+    var robot = (robotCount % 3) + 1;
+
+    if (robot === 1) {showRobot1()};
+    if (robot === 2) {showRobot2()};
+    if (robot === 3) {showRobot3()};
+  };
   //modifes DOM to show elements of beepBoopArray
   var appendBeepBoopArray = function(beepBoopArray) {
-    beepBoopArray.forEach(function(element) {
-      $("#response").append(element + ", ");
-    });
+    var robotCount = 1;
+    var function1 = function(iterator, beepBoopArray, robotCount) {
+      $("#response").append(beepBoopArray[i] + ", ");
+      changeRobot(robotCount);
+      robotCount ++;
+    };
+    var i = 0;
+    var howManyTimes = beepBoopArray.length;
+    function animate() {
+      console.log(beepBoopArray[i]);
+      $("#response").append(beepBoopArray[i] + ", ");
+      i++;
+      changeRobot(robotCount);
+      robotCount++;
+      console.log(i);
+      if (i < howManyTimes) {
+        setTimeout( animate, 300);
+      };
+    };
+    animate();
+
+    // for (var i = 0; i < beepBoopArray.length; i ++) {
+    //   setTimeout(function1(i, beepBoopArray, robotCount), 2000);
+    // };
+
+    // beepBoopArray.forEach(function(element) {
+    //   setTimeout(function(robotCount) {
+    //     $("#response").append(element + ", ");
+    //     changeRobot(robotCount);
+    //     robotCount ++;
+    //   }, 500);
+    // });
   };
   //clears text in response paragraph in DOM
   var reset = function() {

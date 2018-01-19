@@ -47,8 +47,15 @@ button {
   margin-bottom: 50px;
 }
 
-#robot {
+.robot {
   display: block;
   margin-right: auto;
   margin-left: auto;
+  height: 400px;
+  width: 300px;
+}
+
+#robot2, #robot3 {
+  display: none;
+  margin-left: 100px;
 }
