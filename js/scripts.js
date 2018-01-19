@@ -121,22 +121,19 @@ $(document).ready(function() {
     };
     var i = 0;
     var howManyTimes = beepBoopArray.length;
+    $("#response").fadeIn();
     function animate() {
       console.log(beepBoopArray[i]);
-      $("#response").append(beepBoopArray[i] + ", ");
+      $("#response").append(beepBoopArray[i] + ",    ");
       i++;
       changeRobot(robotCount);
       robotCount++;
       console.log(i);
       if (i < howManyTimes) {
-        setTimeout( animate, 300);
+        setTimeout( animate, 400);
       };
     };
     animate();
-
-    // for (var i = 0; i < beepBoopArray.length; i ++) {
-    //   setTimeout(function1(i, beepBoopArray, robotCount), 2000);
-    // };
 
     // beepBoopArray.forEach(function(element) {
     //   setTimeout(function(robotCount) {
@@ -157,18 +154,14 @@ $(document).ready(function() {
 
     userInput = getUserInput();
     var numArray = setNumArray(userInput);
+    console.log(numArray[0]);
 
-    beepBoop(numArray);
+    if (numArray[0] !== undefined) {
+      beepBoop(numArray);
+    };
 
     event.preventDefault();
+
+    $("button").text("Resubmit");
   });
-
 });
-
-//1. collect userInput
-//2. function: create array with numbers up to that point
-//3. function: determine if number contains 0
-//4. function: determine if number contains 1
-//5. function: determine if number divisible by 3
-//6. function: if divisible by 3 --> else ... if contains 1 --> else ... if contains 0 --> else ... return original number.
-//7. function: reset so that user can resubmit
