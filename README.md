@@ -16,6 +16,10 @@ _This website prompts the user to input a number and then responds with a list o
 
 ## Link to webpage
 
+_https://jlardani93.github.io/beep-boop/ ._
+
+## Specifications
+
 ### Program creates array of numbers counting up to the number input by the user
 * _Example Input: 5_
 * _Example Output: [1, 2, 3, 4, 5]_
@@ -35,10 +39,6 @@ _This website prompts the user to input a number and then responds with a list o
 ### Program maps the numbers array onto a new beepBoopArray, altering all numbers that are divisible by 3 or contain a 1 or 0 digit
 * _Example Input: 10_
 * _Example Output: ["Boop!"]
-
-_https://jlardani93.github.io/beep-boop/ ._
-
-## Specifications
 
 ## Setup/Installation Requirements
 
