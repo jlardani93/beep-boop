@@ -119,6 +119,7 @@ $(document).ready(function() {
       changeRobot(robotCount);
       robotCount ++;
     };
+    //creates a delay between each robot animation and append
     var i = 0;
     var howManyTimes = beepBoopArray.length;
     $("#response").fadeIn();
@@ -134,14 +135,6 @@ $(document).ready(function() {
       };
     };
     animate();
-
-    // beepBoopArray.forEach(function(element) {
-    //   setTimeout(function(robotCount) {
-    //     $("#response").append(element + ", ");
-    //     changeRobot(robotCount);
-    //     robotCount ++;
-    //   }, 500);
-    // });
   };
   //clears text in response paragraph in DOM
   var reset = function() {
