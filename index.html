@@ -11,24 +11,29 @@
   <body>
     <div class="container-flex">
 
-      <div class="jumbotron">
+      <div class="jumbotron center">
         <h1>Beep-Beep-Boop</h1>
       </div>
 
-      <div class="explanation">
-        <p>Input a number b</p>
+      <div class="explanation center">
+        <p>Input a number in the field below. Our AI will do it's best to count up to that number for you.</p>
       </div>
 
       <form id="userInput">
         <div class="form-group">
-          <label>Input a number: </label>
-          <input type="text" id="numberInput">
+          <label class="center">Input a number: </label>
+          <input class="center" type="text" id="numberInput">
         </div>
-        <button type="submit" class="btn" name="button">Submit</button>
+        <button type="submit" class="btn center" name="button">Submit</button>
       </form>
 
-      <div id="responseContainer">
-        <p id="response"></p>
+      <div class="row" id="responseContainer">
+        <div class="col-md-6" id="robotContainer">
+          <img id="robot" src="img/robot1.png" alt="">
+        </div>
+        <div class="col-md-6" id="response">
+
+        </div>
       </div>
 
     </div>
